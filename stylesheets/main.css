@@ -1,0 +1,135 @@
+/*----------------------------------------------------------------------------------------------------------------*/
+/* 01 - LAYOUT INITIALIZATION */
+/*----------------------------------------------------------------------------------------------------------------*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px; }
+
+p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 23px;
+  margin-bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: normal; }
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* COMMON SPACING */
+/*----------------------------------------------------------------------------------------------------------------*/
+.pad-top {
+  padding-top: 160px; }
+
+.pad-top-half {
+  padding-top: 80px; }
+
+.pad-min-top-half {
+  padding-top: 40px; }
+
+.pad-min-top-quarter {
+  padding-top: 20px; }
+
+.add-top {
+  margin-top: 160px; }
+
+.add-top-half {
+  margin-top: 80px; }
+
+.add-min-top-half {
+  margin-top: 40px; }
+
+.add-min-top-quarter {
+  margin-top: 20px; }
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* COLORS & BACKGROUNDS COLOR */
+/*----------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------------------*/
+/* FONT WEIGHTS */
+/*----------------------------------------------------------------------------------------------------------------*/
+.font-weight-100 {
+  font-weight: 100; }
+
+.font-weight-200 {
+  font-weight: 200; }
+
+.font-weight-300 {
+  font-weight: 300; }
+
+.font-weight-400 {
+  font-weight: 400; }
+
+.font-weight-500 {
+  font-weight: 500; }
+
+.font-weight-600 {
+  font-weight: 600; }
+
+.font-weight-700 {
+  font-weight: 700; }
+
+.font-weight-800 {
+  font-weight: 800; }
+
+.font-weight-900 {
+  font-weight: 900; }
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* FONT SIZES */
+/*----------------------------------------------------------------------------------------------------------------*/
+.font-size-01 {
+  font-size: 15px;
+  line-height: 22px; }
+
+.font-size-02 {
+  font-size: 17px;
+  line-height: 24px; }
+
+.font-size-03 {
+  font-size: 19px;
+  line-height: 26px; }
+
+.font-size-04 {
+  font-size: 22px;
+  line-height: 29px; }
+
+.font-size-05 {
+  font-size: 35px;
+  line-height: 42px; }
+
+.font-size-06 {
+  font-size: 39px;
+  line-height: 46px; }
+
+.font-size-07 {
+  font-size: 42px;
+  line-height: 49px; }
+
+.font-size-08 {
+  font-size: 47px;
+  line-height: 54px; }
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* FONT CLASSESS */
+/*----------------------------------------------------------------------------------------------------------------*/
+.font-o {
+  font-family: "Open Sans", sans-serif; }
+
+.font-r {
+  font-family: "Roboto Condensed", sans-serif; }
+
+.font-h {
+  font-family: "Hind", sans-serif; }
+
+.font-m {
+  font-family: "Montserrat", sans-serif; }
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* 02 - COMMON ELEMENTS */
+/*---------------------------------------------------------------------------------------------------------------*/
+.full-height {
+  height: 100vh; }
+
+.full-width {
+  width: 100%; }

@@ -1,0 +1,63 @@
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* COMMON SPACING */
+/*----------------------------------------------------------------------------------------------------------------*/
+
+//PADDING CLASS LOOP
+$padding: (pad-top,padding-top,160),(pad-top-half,padding-top,80),(pad-min-top-half,padding-top,40), (pad-min-top-quarter,padding-top,20);
+
+@each $padClass, $padType, $padValue in $padding{
+    .#{$padClass} {
+        #{$padType}: #{$padValue}px;
+    }
+}
+
+//MARGIN CLASS LOOP
+$margin: (add-top,margin-top,160),(add-top-half,margin-top,80),(add-min-top-half,margin-top,40), (add-min-top-quarter,margin-top,20);
+
+@each $marginClass, $marginType, $marginValue in $margin{
+    .#{$marginClass} {
+        #{$marginType}: #{$marginValue}px;
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* COLORS & BACKGROUNDS COLOR */
+/*----------------------------------------------------------------------------------------------------------------*/
+// Color Class Loop
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* FONT WEIGHTS */
+/*----------------------------------------------------------------------------------------------------------------*/
+// Font Weight Class Loop
+$fontweights: 100,200,300,400,500,600,700,800,900;
+@each $fontweight in $fontweights {
+    .font-weight-#{$fontweight} {
+        font-weight: #{$fontweight};
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* FONT SIZES */
+/*----------------------------------------------------------------------------------------------------------------*/
+// Font Size Class Loop
+$fontsizes: (1,15),(2,17),(3,19),(4,22),(5,35),(6,39),(7,42),(8,47);
+@each $fontsizeclass, $fontsize in $fontsizes {
+    .font-size-0#{$fontsizeclass} {
+        font-size: #{$fontsize+px};
+        line-height: #{$fontsize+7px};
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+/* FONT CLASSESS */
+/*----------------------------------------------------------------------------------------------------------------*/
+// Font Class Loop
+$fontclassnames: ($opensans,o),($roboto,r),($hind,h),($montserrat,m);
+@each $fontname, $fontclass in $fontclassnames {
+    .font-#{$fontclass} {
+        font-family: '#{$fontname}', sans-serif;
+    }
+}
