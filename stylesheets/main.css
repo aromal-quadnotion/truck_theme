@@ -15,36 +15,113 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-weight: normal; }
 
+a {
+  color: #7A7A7A;
+  text-decoration: none; }
+  a:hover {
+    outline: none;
+    color: #FF5959;
+    text-decoration: none; }
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* 02 - COMMON ELEMENTS */
+/*---------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------------------------------------------*/
 /* COMMON SPACING */
 /*----------------------------------------------------------------------------------------------------------------*/
 .pad-top {
-  padding-top: 160px; }
+  padding-top: 120px; }
 
 .pad-top-half {
-  padding-top: 80px; }
+  padding-top: 60px; }
 
-.pad-min-top-half {
-  padding-top: 40px; }
+.pad-top-hhalf {
+  padding-top: 30px; }
 
-.pad-min-top-quarter {
-  padding-top: 20px; }
+.pad-top-min {
+  padding-top: 15px; }
 
-.add-top {
-  margin-top: 160px; }
+.pad-bot {
+  padding-bottom: 120px; }
 
-.add-top-half {
-  margin-top: 80px; }
+.pad-bot-half {
+  padding-bottom: 60px; }
 
-.add-min-top-half {
-  margin-top: 40px; }
+.pad-bot-hhalf {
+  padding-bottom: 30px; }
 
-.add-min-top-quarter {
-  margin-top: 20px; }
+.pad-bot-min {
+  padding-bottom: 15px; }
+
+.mar-top {
+  margin-top: 120px; }
+
+.mar-top-half {
+  margin-top: 60px; }
+
+.mar-top-hhalf {
+  margin-top: 30px; }
+
+.mar-top-min {
+  margin-top: 15px; }
+
+.mar-bot {
+  margin-bottom: 120px; }
+
+.mar-bot-half {
+  margin-bottom: 60px; }
+
+.mar-bot-hhalf {
+  margin-bottom: 30px; }
+
+.mar-bot-min {
+  margin-bottom: 15px; }
 
 /*----------------------------------------------------------------------------------------------------------------*/
 /* COLORS & BACKGROUNDS COLOR */
 /*----------------------------------------------------------------------------------------------------------------*/
+.gray-b {
+  color: #9B9B9B; }
+
+.gray-b-bg {
+  background-color: #9B9B9B; }
+
+.gray-l {
+  color: #7F7B81; }
+
+.gray-l-bg {
+  background-color: #7F7B81; }
+
+.black {
+  color: #4A4A4A; }
+
+.black-bg {
+  background-color: #4A4A4A; }
+
+.red {
+  color: #FF5959; }
+
+.red-bg {
+  background-color: #FF5959; }
+
+.blue {
+  color: #4A90E2; }
+
+.blue-bg {
+  background-color: #4A90E2; }
+
+.white {
+  color: #FFFFFF; }
+
+.white-bg {
+  background-color: #FFFFFF; }
+
+.white-2 {
+  color: #F4F4F4; }
+
+.white-2-bg {
+  background-color: #F4F4F4; }
+
 /*----------------------------------------------------------------------------------------------------------------*/
 /* FONT WEIGHTS */
 /*----------------------------------------------------------------------------------------------------------------*/
@@ -78,35 +155,43 @@ h1, h2, h3, h4, h5, h6 {
 /*----------------------------------------------------------------------------------------------------------------*/
 /* FONT SIZES */
 /*----------------------------------------------------------------------------------------------------------------*/
-.font-size-01 {
+.font-size-1 {
+  font-size: 12px;
+  line-height: 19px; }
+
+.font-size-2 {
+  font-size: 14px;
+  line-height: 21px; }
+
+.font-size-3 {
   font-size: 15px;
   line-height: 22px; }
 
-.font-size-02 {
+.font-size-4 {
   font-size: 17px;
   line-height: 24px; }
 
-.font-size-03 {
+.font-size-5 {
   font-size: 19px;
   line-height: 26px; }
 
-.font-size-04 {
+.font-size-6 {
   font-size: 22px;
   line-height: 29px; }
 
-.font-size-05 {
+.font-size-7 {
   font-size: 35px;
   line-height: 42px; }
 
-.font-size-06 {
+.font-size-8 {
   font-size: 39px;
   line-height: 46px; }
 
-.font-size-07 {
+.font-size-9 {
   font-size: 42px;
   line-height: 49px; }
 
-.font-size-08 {
+.font-size-10 {
   font-size: 47px;
   line-height: 54px; }
 
@@ -125,11 +210,115 @@ h1, h2, h3, h4, h5, h6 {
 .font-m {
   font-family: "Montserrat", sans-serif; }
 
-/*---------------------------------------------------------------------------------------------------------------*/
-/* 02 - COMMON ELEMENTS */
-/*---------------------------------------------------------------------------------------------------------------*/
 .full-height {
   height: 100vh; }
 
 .full-width {
   width: 100%; }
+
+.disin {
+  display: inline-block; }
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* 03 - FOR MENU */
+/*---------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------*/
+/* 04 - PAGE ELEMENTS */
+/*---------------------------------------------------------------------------------------------------------------*/
+.social-block {
+  position: relative; }
+  .social-block-icon {
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    .social-block-icon ul {
+      padding: 0;
+      margin: 2px 0 0 0; }
+    .social-block-icon ul li {
+      text-align: center;
+      padding: 3px;
+      list-style: none;
+      display: inline; }
+      .social-block-icon ul li a i {
+        padding: 0 3px; }
+
+.nav {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+  .nav ul {
+    padding: 0;
+    margin: 2px 0 0 0;
+    position: relative; }
+  .nav ul li {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    padding-left: 40px; }
+    .nav ul li.menu-icon {
+      display: inline-block; }
+      .nav ul li.menu-icon.truck-icon::before {
+        content: " ";
+        background: url(../img/truck-icon.svg);
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 10px;
+        bottom: 9px; }
+      .nav ul li.menu-icon.insurance-icon::before {
+        content: " ";
+        background: url(../img/insurance-icon.svg);
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 115px;
+        bottom: 12px; }
+      .nav ul li.menu-icon.finance-icon::before {
+        content: " ";
+        background: url(../img/finance-icon.svg);
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 242px;
+        bottom: 11px; }
+  .nav a {
+    color: #4A4A4A;
+    font-weight: 600;
+    font-family: "Hind", sans-serif;
+    text-decoration: none; }
+    .nav a:hover {
+      outline: none;
+      color: #FF5959;
+      text-decoration: none; }
+    .nav a:active {
+      outline: none;
+      color: #FF5959;
+      text-decoration: none; }
+  .nav .compare-block {
+    border: 1px solid #9B9B9B;
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 19px; }
+  .nav .truck-compare-icon {
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    width: 60px;
+    height: 57px;
+    left: 3px;
+    top: -16px; }
+    .nav .truck-compare-icon .compare-icon-img {
+      position: absolute;
+      top: 4px;
+      left: 8px; }

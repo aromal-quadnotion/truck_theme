@@ -3,8 +3,8 @@
 /* COMMON SPACING */
 /*----------------------------------------------------------------------------------------------------------------*/
 
-//PADDING CLASS LOOP
-$padding: (pad-top,padding-top,160),(pad-top-half,padding-top,80),(pad-min-top-half,padding-top,40), (pad-min-top-quarter,padding-top,20);
+//PADDING TOP CLASS LOOP
+$padding: (pad-top,padding-top,120),(pad-top-half,padding-top,60),(pad-top-hhalf,padding-top,30), (pad-top-min,padding-top,15);
 
 @each $padClass, $padType, $padValue in $padding{
     .#{$padClass} {
@@ -12,8 +12,26 @@ $padding: (pad-top,padding-top,160),(pad-top-half,padding-top,80),(pad-min-top-h
     }
 }
 
-//MARGIN CLASS LOOP
-$margin: (add-top,margin-top,160),(add-top-half,margin-top,80),(add-min-top-half,margin-top,40), (add-min-top-quarter,margin-top,20);
+//PADDING BOTTOM CLASS LOOP
+$padding: (pad-bot,padding-bottom,120),(pad-bot-half,padding-bottom,60),(pad-bot-hhalf,padding-bottom,30), (pad-bot-min,padding-bottom,15);
+
+@each $padClass, $padType, $padValue in $padding{
+    .#{$padClass} {
+        #{$padType}: #{$padValue}px;
+    }
+}
+
+//MARGIN TOP CLASS LOOP
+$margin: (mar-top,margin-top,120),(mar-top-half,margin-top,60),(mar-top-hhalf,margin-top,30), (mar-top-min,margin-top,15);
+
+@each $marginClass, $marginType, $marginValue in $margin{
+    .#{$marginClass} {
+        #{$marginType}: #{$marginValue}px;
+    }
+}
+
+//MARGIN BOTTOM CLASS LOOP
+$margin: (mar-bot,margin-bottom,120),(mar-bot-half,margin-bottom,60),(mar-bot-hhalf,margin-bottom,30), (mar-bot-min,margin-bottom,15);
 
 @each $marginClass, $marginType, $marginValue in $margin{
     .#{$marginClass} {
@@ -26,7 +44,16 @@ $margin: (add-top,margin-top,160),(add-top-half,margin-top,80),(add-min-top-half
 /*----------------------------------------------------------------------------------------------------------------*/
 // Color Class Loop
 
+$colors: (gray-b, $bold-gray), (gray-l, $light-gray), (black, $black), (red, $red),  (blue, $blue), (white, $white), (white-2, $prehead-bg);
+@each $colorclass, $colorvalue in $colors {
+    .#{$colorclass} {
+        color: #{$colorvalue};
+    }
 
+    .#{$colorclass}-bg {
+        background-color: #{$colorvalue};
+    }
+}
 
 /*----------------------------------------------------------------------------------------------------------------*/
 /* FONT WEIGHTS */
@@ -43,9 +70,9 @@ $fontweights: 100,200,300,400,500,600,700,800,900;
 /* FONT SIZES */
 /*----------------------------------------------------------------------------------------------------------------*/
 // Font Size Class Loop
-$fontsizes: (1,15),(2,17),(3,19),(4,22),(5,35),(6,39),(7,42),(8,47);
+$fontsizes: (1,12),(2,14),(3,15),(4,17),(5,19),(6,22),(7,35),(8,39),(9,42),(10,47);
 @each $fontsizeclass, $fontsize in $fontsizes {
-    .font-size-0#{$fontsizeclass} {
+    .font-size-#{$fontsizeclass} {
         font-size: #{$fontsize+px};
         line-height: #{$fontsize+7px};
     }

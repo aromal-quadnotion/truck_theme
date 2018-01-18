@@ -21,17 +21,170 @@ h1,h2,h3,h4,h5,h6{
 	margin-top: 0;
 	font-weight: normal;
 }
+a {
+    color: $prehead-color-1;
+    text-decoration: none;
+    &:hover {
+      outline: none;
+      color: $red;
+      text-decoration: none;
+    }
+  }
+
 
 /*---------------------------------------------------------------------------------------------------------------*/
 
 /* 02 - COMMON ELEMENTS */
 
 /*---------------------------------------------------------------------------------------------------------------*/
-
+@import 'loops';
 .full-height{
     height: 100vh;
 }
 .full-width{
     width: 100%;
 }
-@import 'loops';
+
+.disin {
+  display: inline-block;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+
+/* 03 - FOR MENU */
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+
+//  .menu-icon a:before {
+//      content: "";
+//      display: block;
+//      width: 20px;
+//      height: 20px;
+//      float: left;
+//      margin-left: -20px;
+// }
+
+
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+/* 04 - PAGE ELEMENTS */
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+ .social-block{
+   position: relative;
+       &-icon {
+         margin: 0;
+         padding: 0;
+         width: 100%;
+         ul {
+             padding: 0;
+             margin: 2px 0 0 0;
+         }
+         ul li {
+           text-align: center;
+             padding: 3px;
+             list-style: none;
+             display: inline;
+             a i{
+               padding: 0 3px;
+             }
+         }
+       }
+ }
+
+ .nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    ul {
+        padding: 0;
+        margin: 2px 0 0 0;
+        position: relative;
+      }
+    ul li {
+        padding: 10px;
+        margin: 0;
+        list-style: none;
+        padding-left: 40px;
+        &.menu-icon{
+            display: inline-block;
+            &.truck-icon::before{
+              content: " ";
+              background: url(../img/truck-icon.svg);
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background-repeat: no-repeat;
+              background-size: contain;
+              position: absolute;
+              left: 10px;
+              bottom: 9px;
+            }
+            &.insurance-icon::before{
+              content: " ";
+              background: url(../img/insurance-icon.svg);
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background-repeat: no-repeat;
+              background-size: contain;
+              position: absolute;
+              left: 115px;
+              bottom: 12px;
+            }
+            &.finance-icon::before{
+              content: " ";
+              background: url(../img/finance-icon.svg);
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background-repeat: no-repeat;
+              background-size: contain;
+              position: absolute;
+              left: 242px;
+              bottom: 11px;
+            }
+          }
+       }
+        a {
+            color: $black;
+            font-weight: 600;
+            font-family: "Hind", sans-serif;
+            text-decoration: none;
+            &:hover {
+              outline: none;
+              color: $red;
+              text-decoration: none;
+            }
+            &:active{
+              outline: none;
+              color: $red;
+              text-decoration: none;
+            }
+          }
+          .compare-block {
+            border: 1px solid $bold-gray;
+            border-radius: 25px;
+            padding-left: 15px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            margin-top: 19px;
+          }
+          .truck-compare-icon {
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            width: 60px;
+            height: 57px;
+            left: 3px;
+            top: -16px;
+
+            .compare-icon-img {
+              position: absolute;
+              top: 4px;
+              left: 8px;
+            }
+            }
+      }
