@@ -16,30 +16,30 @@
 
   <section class="white-2-bg social-block">
     <div class="container">
-      <div class="row">
+      <div class="row pre-header-padding-bottom">
         <div class="col-md-6"></div>
         <div class="col-md-6">
           <div class="row justify-content-md-end">
             <div class="col-7 col-md-auto">
-              <span class="font-size-1 gray-b font-h font-weight-700">ASK EXPERT</span> <div class="font-size-1 bray-l disin font-h font-weight-500"><a href="tel:+919846098460">+919846098460</a> | <a href="mailto:info@truckingindia.in">info@truckingindia.in</a></div>
+              <span class="font-size-1 gray-b font-h font-weight-700">ASK EXPERT</span> <div class="font-size-1 bray-l display-inline font-h font-weight-500"><a class="ease" href="tel:+919846098460">+919846098460</a>  |  <a class="ease" href="mailto:info@truckingindia.in">info@truckingindia.in</a></div>
             </div>
             <div class="col-2 col-md-auto">
               <div class="social-block-icon">
                 <ul>
                   <li>
-                    <a href="#" target="_blank"><i class="ion-social-instagram"></i></a>
+                    <a class="ease" href="#" target="_blank"><i class="ion-social-instagram"></i></a>
                   </li>
                   <li>
-                    <a href="#" target="_blank"><i class="ion-social-facebook"></i></a>
+                    <a class="ease" href="#" target="_blank"><i class="ion-social-facebook"></i></a>
                   </li>
                   <li>
-                    <a href="#" target="_blank"><i class="ion-social-twitter"></i></a>
+                    <a class="ease" href="#" target="_blank"><i class="ion-social-twitter"></i></a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-3 col-md-auto">
-              <span class="font-size-1 gray-l font-h font-weight-500">ENG | HIN | TML</span>
+              <span class="font-size-1 gray-l font-h font-weight-500"><a class="ease" href="#">ENG</a> | <a class="ease" href="#">HIN</a> | <a class="ease" href="#">TML</a></span>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
       <div class="row mar-top-min mar-bot-min">
         <div class="col-md-2">
           <a href="<?php echo esc_url(home_url( '/' )); ?>">
-            <img src="wp-content/uploads/2018/01/logo.png" width="125px;">
+            <img src="http://localhost:8888/trucking/wp-content/uploads/2018/01/logo.png" width="125px;">
           </a>
         </div>
         <div class="col-md-7">
@@ -76,7 +76,7 @@
               </div>
               <div class="col">
                 <div class="truck-compare-icon">
-                  <img class="compare-icon-img" src="wp-content/themes/truck_theme/img/truck.svg" alt="" width="45px" height="45px">
+                  <img class="compare-icon-img" src="<?php echo get_template_directory_uri(); ?>/image/truck.svg" alt="" width="45px" height="45px">
                 </div>
               </div>
               <div class="col">
