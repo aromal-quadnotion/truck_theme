@@ -16,6 +16,8 @@ p{
   color: $p;
 	line-height:23px;
   margin-bottom: 0;
+  letter-spacing: 0.62px;
+  font-family: $opensans;
 }
 h1,h2,h3,h4,h5,h6{
 	margin-top: 0;
@@ -61,6 +63,15 @@ a {
 .content-right {
   text-align: right;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+.wpcf7-display-none {
+    display: none !important;
+}
 /*---------------------------------------------------------------------------------------------------------------*/
 
 /* 03 - Specific class used for shortcode admin side */
@@ -98,6 +109,31 @@ a {
                }
              }
         }
+        &-lang {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          ul {
+              padding: 0;
+              margin: 2px 0 0 0;
+            }
+          ul li {
+               text-align: center;
+               padding: 3px;
+               list-style: none;
+               display: inline;
+                &.lang a:hover {
+                  color: $red;
+                }
+                &.lang::before {
+                  content: "|";
+                  display: inline-block;
+                  left: -5px;
+                  position: relative;
+                  top: -1px;
+                }
+              }
+         }
       .pre-header-padding-bottom {
         padding-bottom: 1px;
       }
@@ -110,6 +146,10 @@ a {
     @include shadow(0,5,5,0,0,0,0,0.2);
     position: relative;
     z-index: 999;
+    .logo {
+      width: auto;
+      height: 73px;
+    }
     ul {
         padding: 0;
         margin: 2px 0 0 0;
@@ -119,46 +159,8 @@ a {
         padding: 10px;
         margin: 0;
         list-style: none;
-        padding-left: 46px;
-        &.menu-icon{
-            display: inline-block;
-            &.truck-icon::before{
-              content: " ";
-              background: url(../image/truck-icon.svg);
-              display: inline-block;
-              width: 25px;
-              height: 25px;
-              background-repeat: no-repeat;
-              background-size: contain;
-              position: absolute;
-              left: 10px;
-              bottom: 9px;
-            }
-            &.insurance-icon::before{
-              content: " ";
-              background: url(../image/insurance-icon.svg);
-              display: inline-block;
-              width: 25px;
-              height: 25px;
-              background-repeat: no-repeat;
-              background-size: contain;
-              position: absolute;
-              left: 120px;
-              bottom: 12px;
-            }
-            &.finance-icon::before{
-              content: " ";
-              background: url(../image/finance-icon.svg);
-              display: inline-block;
-              width: 25px;
-              height: 25px;
-              background-repeat: no-repeat;
-              background-size: contain;
-              position: absolute;
-              left: 252px;
-              bottom: 11px;
-            }
-          }
+        display: inline-block;
+
        }
         a {
             color: $black;
@@ -183,7 +185,7 @@ a {
             padding-left: 16px;
             padding-top: 4px;
             padding-bottom: 3px;
-            margin-top: 19px;
+            margin-top: 22px;
           }
           .truck-compare-icon {
             background-color: #F00000;
@@ -192,7 +194,7 @@ a {
             width: 60px;
             height: 57px;
             left: 3px;
-            top: -17px;
+            top: -18px;
 
             .compare-icon-img {
               position: absolute;
@@ -240,7 +242,7 @@ a {
  }
 
  .footer {
-   background-image: url(../image/footer-trucks-bg.png);
+   background-image: url(../images/footer-trucks-bg.png);
    background-repeat: no-repeat;
    background-position: bottom center;
 
@@ -283,7 +285,8 @@ a {
             }
         }
           .footer-widget-1 img {
-            width: 140px;
+            width: 73px;
+            margin-bottom: 15px;
           }
 
       }
@@ -322,7 +325,7 @@ a {
         width: 100%;
         height: 100%;
         background-color: #FF001F;
-        background-image: url(../image/mail-chimp.png);
+        background-image: url(../images/mail-chimp.png);
         background-repeat: no-repeat;
         background-position: center center;
         padding: 8px;
@@ -361,6 +364,8 @@ a {
    &-text {
      display: inline-block;
      padding-top: 5px;
+     font-size: 13px;
+     line-height: 20px;
    }
  }
 
@@ -368,7 +373,7 @@ a {
 
  /*---------------------------------------------------------------------------------------------------------------*/
 
- /* 06 - HOME PAGE SLIDER ELEMENTS */
+ /* 06 - Shortcode Elements */
 
  /*---------------------------------------------------------------------------------------------------------------*/
 
@@ -501,8 +506,6 @@ a {
           font-size: 25px;
         }
 }
-
-
 
  .slideshow {
    position: absolute;
@@ -679,6 +682,10 @@ a {
       margin-top: 15px;
       padding: 10px 0;
       cursor: pointer;
+      &:hover {
+        color: #000;
+        @include transition(all,0.3s,ease-in-out,0s);
+      }
     }
     .wpcf7-response-output {
        display: none !important;
@@ -806,10 +813,86 @@ a {
       font-weight: 700;
       color: #FFFFFF;
       cursor: pointer;
+      &:hover {
+        @include transition(all,0.3s,ease-in-out,0s);
+        color: $red;
+      }
     }
     .wpcf7-response-output {
        display: none !important;
      }
+    .insurance-quote-insurance-page {
+      .insurance-page-common-head {
+        font-family: $hind;
+        font-weight: 600;
+        font-size: 13px;
+        color: #000000;
+        letter-spacing: 0.41px;
+      }
+      .padtop {
+        display: inline-block;
+        padding-top: 7px;
+      }
+      .insurance-page-name {
+        width: 100%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #9B9B9B;
+        margin-bottom: 20px;
+      }
+      .insurance-page-name1 {
+        width: 100%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #9B9B9B;
+        margin-bottom: 20px;
+        &::placeholder {
+          text-align: center;
+        }
+      }
+      .insurance-page-email {
+        width: 100%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #9B9B9B;
+        margin-bottom: 20px;
+      }
+      .insurance-page-mobile {
+        width: 100%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #9B9B9B;
+        margin-bottom: 20px;
+      }
+      .insurance-page-checkbox {
+        font-family: $hind;
+        font-weight: 400;
+        font-size: 12px;
+        color: #9B9B9B;
+        letter-spacing: 0.41px;
+        margin-bottom: 25px;
+        display: inline-block;
+      }
+      .insurance-page-submit {
+        border: 1px solid #FF001F;
+        border-radius: 100px;
+        font-family: $hind;
+        font-weight: 700;
+        font-size: 13px;
+        color: #FF001F;
+        letter-spacing: 0.41px;
+        padding: 10px 15px 6px 15px;
+        cursor: pointer;
+      }
+      span.wpcf7-not-valid-tip {
+          margin-top: -20px;
+          font-size: 10px;
+      }
+    }
   }
 }
 /// title block shortcode
@@ -868,6 +951,10 @@ a {
         span {
           font-weight: 700;
         }
+        a:hover {
+          @include transition(all,0.3s,ease-in-out,0s);
+          color: $black !important;
+        }
       }
     }
     .blog-left-image {
@@ -875,6 +962,7 @@ a {
       height: 100%;
       background-repeat: no-repeat;
       background-position: center center;
+      background-size: cover;
     }
   }
   .blog-right-wrap {
@@ -907,6 +995,10 @@ a {
         span {
           font-weight: 700;
         }
+        a:hover {
+          @include transition(all,0.3s,ease-in-out,0s);
+          color: $black !important;
+        }
       }
     }
     .blog-right-image {
@@ -914,6 +1006,7 @@ a {
       height: 100%;
       background-repeat: no-repeat;
       background-position: center center;
+      background-size: cover;
     }
   }
   .blog-block-button {
@@ -936,44 +1029,255 @@ a {
 
 //brand display section
 .brand-disply-block {
-  .brand-name-display {
+  .brand-display {
     ul {
         padding: 0;
-        margin: 2px 0 0 0;
         position: relative;
     }
     ul li {
         padding: 10px;
         margin: 0;
         list-style: none;
+
+        a {
+          display: none;
+        }
+    }
+    .brand-image-display {
+      padding: 0px 20px;
+      .owl-nav {
+        .owl-prev {
+          background: none;
+          color: #9B9B9B;
+          position: absolute;
+          left: -45px;
+          top: 25%;
+        }
+        .owl-next {
+          background: none;
+          color: #9B9B9B;
+          position: absolute;
+          right: -45px;
+          top: 25%;
+          }
+        }
+     }
+  }
+
+}
+
+//brand name listing block
+.brand-name-trigger-list {
+  padding: 0;
+  margin: 2px 0 0 0;
+  text-align: right;
+  padding-top: 10px;
+  margin-right: 40px;
+  li {
+    letter-spacing: 0.45px;
+     padding: 3px;
+     list-style: none;
+     display: inline;
+     color: #9B9B9B;
+      a {
+        padding: 0 3px;
+        &.active{
+          color: $red;
+        }
+
+      }
+  }
+}
+
+//Iconised Title Block Shortcode
+.iconised-title-wrap {
+  .iconised-title-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 155px;
+    height: 160px;
+    background-size: cover;
+  }
+  .iconised-title-text {
+    font-family: $hind;
+    font-weight: 700;
+    font-size: 48px;
+    color: #555555;
+    letter-spacing: 0.45px;
+    line-height: 44px;
+    margin-top: -30px;
+    span {
+      font-weight: 300;
+      color: #FF001F;
     }
   }
-  .brand-image-display {
-    ul {
-      padding: 0;
-      margin: 2px 0 0 0;
-      position: relative;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+
+/* 07 - Single Page or Post disply page */
+
+/*---------------------------------------------------------------------------------------------------------------*/
+.truck-post-title-wrap {
+  position: relative;
+  z-index: -2;
+  height: 245px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  .truck-post-title-bg {
+    opacity: 0.56;
+    background-color: #000000;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .truck-post-title-line1 {
+    width: 35px;
+    height: 1px;
+    margin-bottom: 5px;
+    background-color: red;
+    margin-left: 5px;
+  }
+  .truck-post-title-line2 {
+    width: 35px;
+    height: 1px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  .truck-post-title {
+    letter-spacing: 0.07px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.59);
+  }
+  .truck-post-date-and-author {
+    .truck-post-title-date {
+      color: #EFEFEF;
+      letter-spacing: 0.72px;
+      padding-right: 5px;
     }
-    ul li {
-        padding: 10px;
-        margin: 0;
-        list-style: none;
+    .truck-post-title-author {
+      color: #EFEFEF;
+      letter-spacing: 0.72px;
+      padding-left: 5px;
     }
-    .owl-nav {
-      .owl-prev {
-        background: none;
-        color: #9B9B9B;
-        position: absolute;
-        left: -25px;
-        top: 35%;
-      }
-      .owl-next {
-        background: none;
-        color: #9B9B9B;
-        position: absolute;
-        right: -25px;
-        top: 35%;
+  }
+}
+.truck-post-breadcrumb {
+  opacity: 0.79;
+  font-family: $hind;
+  font-weight: 600;
+  font-size: 10px;
+  color: #9B9B9B;
+  letter-spacing: 0.51px;
+  a {
+    @include transition(all,0.3s,ease-in-out,0s);
+  }
+}
+
+.truck-post-content-wrap {
+  .truck-post-content {
+    .kc-container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+  .truck-post-tags {
+    font-family: $hind;
+    font-weight: 600;
+    font-size: 12px;
+    color: #9B9B9B;
+    letter-spacing: 0.07px;
+    display: inline-block;
+    a {
+      border: 1px solid #979797;
+      border-radius: 63px;
+      padding: 2px 12px 1px 12px;
+      margin-right: 5px;
+      @include transition(all,0.3s,ease-in-out,0s);
+    }
+  }
+  /*--- Sidebar Contact Form ---*/
+  .truck-post-sidebar {
+    .side-bar-cf7 {
+      background-image: linear-gradient(133deg, #DA2B2B 0%, #3E1673 100%);
+      box-shadow: 0 0 14px 0 rgba(0,0,0,0.11);
+      border-radius: 3px;
+      padding: 30px 15px;
+      .side-bar-cf7-title {
+        text-align: center;
+        letter-spacing: 0.45px;
+        span {
+          font-weight: 300;
         }
       }
-   }
+      .input-name {
+        width: 100%;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid white;
+        color: white;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+      .input-email {
+        width: 100%;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid white;
+        margin-bottom: 20px;
+        font-family: $hind;
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0.45px;
+      }
+      .input-mobile {
+        width: 100%;
+        background: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid white;
+        margin-bottom: 20px;
+        font-family: $hind;
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0.45px;
+      }
+      .input-radio {
+        font-size: 13px;
+        letter-spacing: 0.41px;
+        color: #FFFFFF;
+        font-family: $hind;
+        font-weight: 400;
+      }
+      .input-submit {
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+        letter-spacing: 0.38px;
+        background: transparent;
+        padding: 6px 12px 3px 12px;
+        font-family: $hind;
+        font-size: 12px;
+        font-weight: 700;
+        color: #FFFFFF;
+        cursor: pointer;
+        &:hover {
+          @include transition(all,0.3s,ease-in-out,0s);
+          color: $red;
+        }
+      }
+      span.wpcf7-not-valid-tip {
+          font-size: 10px;
+          margin-top: -20px;
+          color: #3a99fc;
+      }
+    }
+  }
 }

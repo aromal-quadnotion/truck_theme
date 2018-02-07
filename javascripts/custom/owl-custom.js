@@ -35,13 +35,13 @@ jQuery(document).ready(function($){
     //   $('.brand-name-display li').removeClass('active');
     //   $(this).addClass('active');
     // });
-
+var templateUrl = theme_url_path.template_directory_uri;
     $('.brand-image-display').owlCarousel({
       loop:true,
       margin:10,
       dots: false,
       nav:true,
-      navText : ['<i class="fa fa-long-arrow-left" aria-hidden="true"></i>','<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'],
+      navText : ['<img src="'+templateUrl+'/images/owl/left-arrow.png">','<img src="'+templateUrl+'/images/owl/right-arrow.png">'],
       autoplay:true,
       autoplayTimeout:2000,
       responsive:{
@@ -57,13 +57,32 @@ jQuery(document).ready(function($){
         }
 
     });
-    $(".justify-content-end li").click(function(){
-      $("li").not(this).children("ul").hide("slow");
-      $(this).children("ul").show("slow");
+    $(".brand-slider-list li a").click(function(){
+      $("li.brand-slider-list-item").hide("slow");
+      $(this).closest('li').show("slow");
     });
 
     $(window).on('load', function(){
-        $(".justify-content-end li:first").click();
+        $(".brand-slider-list li:first-child a").trigger('click');
     });
     //Brand Sliding Ends
+
+    $('.brand-slider-list .brand-slider-list-item').each(function(){
+      var brandName = $(this).find('a').text();
+      var brandTriggerId = $(this).find('a').attr('id');
+
+      var triggerListItem = '<li><a href="#'+ brandTriggerId +'">'+ brandName +'</a></li>';
+      $('.brand-name-trigger-list').append(triggerListItem);
+    });
+
+    $('.brand-name-trigger-list li:first-child a').addClass('active');
+
+    $('.brand-name-trigger-list li a').on('click', function(){
+      $('.brand-name-trigger-list li a').removeClass('active');
+      $(this).addClass('active');
+
+      var brandId = $(this).attr('href');
+      $('a'+ brandId).trigger('click');
+      return false;
+    });
 });

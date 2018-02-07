@@ -9,7 +9,9 @@ p {
   font-size: 16px;
   color: #555555;
   line-height: 23px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  letter-spacing: 0.62px;
+  font-family: "Open Sans"; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -243,6 +245,15 @@ a {
 .content-right {
   text-align: right; }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none; }
+
+.wpcf7-display-none {
+  display: none !important; }
+
 /*---------------------------------------------------------------------------------------------------------------*/
 /* 03 - Specific class used for shortcode admin side */
 /*---------------------------------------------------------------------------------------------------------------*/
@@ -268,6 +279,26 @@ a {
       display: inline; }
       .social-block-icon ul li a i {
         padding: 0 3px; }
+  .social-block-lang {
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    .social-block-lang ul {
+      padding: 0;
+      margin: 2px 0 0 0; }
+    .social-block-lang ul li {
+      text-align: center;
+      padding: 3px;
+      list-style: none;
+      display: inline; }
+      .social-block-lang ul li.lang a:hover {
+        color: #FF5959; }
+      .social-block-lang ul li.lang::before {
+        content: "|";
+        display: inline-block;
+        left: -5px;
+        position: relative;
+        top: -1px; }
   .social-block .pre-header-padding-bottom {
     padding-bottom: 1px; }
 
@@ -280,6 +311,9 @@ a {
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 999; }
+  .nav .logo {
+    width: auto;
+    height: 73px; }
   .nav ul {
     padding: 0;
     margin: 2px 0 0 0;
@@ -288,42 +322,7 @@ a {
     padding: 10px;
     margin: 0;
     list-style: none;
-    padding-left: 46px; }
-    .nav ul li.menu-icon {
-      display: inline-block; }
-      .nav ul li.menu-icon.truck-icon::before {
-        content: " ";
-        background: url(../image/truck-icon.svg);
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        left: 10px;
-        bottom: 9px; }
-      .nav ul li.menu-icon.insurance-icon::before {
-        content: " ";
-        background: url(../image/insurance-icon.svg);
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        left: 120px;
-        bottom: 12px; }
-      .nav ul li.menu-icon.finance-icon::before {
-        content: " ";
-        background: url(../image/finance-icon.svg);
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        left: 252px;
-        bottom: 11px; }
+    display: inline-block; }
   .nav a {
     color: #4A4A4A;
     font-weight: 600;
@@ -348,7 +347,7 @@ a {
     padding-left: 16px;
     padding-top: 4px;
     padding-bottom: 3px;
-    margin-top: 19px; }
+    margin-top: 22px; }
   .nav .truck-compare-icon {
     background-color: #F00000;
     border-radius: 50%;
@@ -356,7 +355,7 @@ a {
     width: 60px;
     height: 57px;
     left: 3px;
-    top: -17px; }
+    top: -18px; }
     .nav .truck-compare-icon .compare-icon-img {
       position: absolute;
       top: 4px;
@@ -389,7 +388,7 @@ a {
     opacity: 0.8; }
 
 .footer {
-  background-image: url(../image/footer-trucks-bg.png);
+  background-image: url(../images/footer-trucks-bg.png);
   background-repeat: no-repeat;
   background-position: bottom center; }
   .footer-inline {
@@ -429,7 +428,8 @@ a {
         font-size: 12px;
         padding: 0 3px; }
     .footer-inline .footer-widget-1 img {
-      width: 140px; }
+      width: 73px;
+      margin-bottom: 15px; }
   .footer-quick-link {
     margin: 0;
     padding: 0; }
@@ -465,7 +465,7 @@ a {
     width: 100%;
     height: 100%;
     background-color: #FF001F;
-    background-image: url(../image/mail-chimp.png);
+    background-image: url(../images/mail-chimp.png);
     background-repeat: no-repeat;
     background-position: center center;
     padding: 8px;
@@ -493,10 +493,12 @@ a {
         padding: 0 3px; }
   .copyright-text {
     display: inline-block;
-    padding-top: 5px; }
+    padding-top: 5px;
+    font-size: 13px;
+    line-height: 20px; }
 
 /*---------------------------------------------------------------------------------------------------------------*/
-/* 06 - HOME PAGE SLIDER ELEMENTS */
+/* 06 - Shortcode Elements */
 /*---------------------------------------------------------------------------------------------------------------*/
 .banner {
   height: calc(100vh - 125px);
@@ -742,6 +744,13 @@ a {
       margin-top: 15px;
       padding: 10px 0;
       cursor: pointer; }
+      .callback-wrap .callback-form-wrap .callback-form-submit:hover {
+        color: #000;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
     .callback-wrap .callback-form-wrap .wpcf7-response-output {
       display: none !important; }
 
@@ -844,8 +853,75 @@ a {
     font-weight: 700;
     color: #FFFFFF;
     cursor: pointer; }
+    .insurance-quote-wrap .insurance-quote-form .input-submit:hover {
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      color: #FF5959; }
   .insurance-quote-wrap .insurance-quote-form .wpcf7-response-output {
     display: none !important; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-common-head {
+    font-family: "Hind";
+    font-weight: 600;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0.41px; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .padtop {
+    display: inline-block;
+    padding-top: 7px; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-name {
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #9B9B9B;
+    margin-bottom: 20px; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-name1 {
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #9B9B9B;
+    margin-bottom: 20px; }
+    .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-name1::placeholder {
+      text-align: center; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-email {
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #9B9B9B;
+    margin-bottom: 20px; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-mobile {
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #9B9B9B;
+    margin-bottom: 20px; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-checkbox {
+    font-family: "Hind";
+    font-weight: 400;
+    font-size: 12px;
+    color: #9B9B9B;
+    letter-spacing: 0.41px;
+    margin-bottom: 25px;
+    display: inline-block; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page .insurance-page-submit {
+    border: 1px solid #FF001F;
+    border-radius: 100px;
+    font-family: "Hind";
+    font-weight: 700;
+    font-size: 13px;
+    color: #FF001F;
+    letter-spacing: 0.41px;
+    padding: 10px 15px 6px 15px;
+    cursor: pointer; }
+  .insurance-quote-wrap .insurance-quote-form .insurance-quote-insurance-page span.wpcf7-not-valid-tip {
+    margin-top: -20px;
+    font-size: 10px; }
 
 .title-block-wrap .title-block-line1 {
   width: 35px;
@@ -889,11 +965,19 @@ a {
         font-size: 13px; }
         .blog-block-wrap .blog-left-wrap .blog-left-content-wrap .blog-left-read-more span {
           font-weight: 700; }
+        .blog-block-wrap .blog-left-wrap .blog-left-content-wrap .blog-left-read-more a:hover {
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          -ms-transition: all 0.3s ease-in-out 0s;
+          -o-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+          color: #4A4A4A !important; }
     .blog-block-wrap .blog-left-wrap .blog-left-image {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
-      background-position: center center; }
+      background-position: center center;
+      background-size: cover; }
   .blog-block-wrap .blog-right-wrap {
     background: #FFFFFF;
     box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
@@ -916,11 +1000,19 @@ a {
         font-size: 13px; }
         .blog-block-wrap .blog-right-wrap .blog-right-content-wrap .blog-right-read-more span {
           font-weight: 700; }
+        .blog-block-wrap .blog-right-wrap .blog-right-content-wrap .blog-right-read-more a:hover {
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          -ms-transition: all 0.3s ease-in-out 0s;
+          -o-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+          color: #4A4A4A !important; }
     .blog-block-wrap .blog-right-wrap .blog-right-image {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
-      background-position: center center; }
+      background-position: center center;
+      background-size: cover; }
   .blog-block-wrap .blog-block-button {
     position: relative;
     margin: 40px 0px;
@@ -934,36 +1026,216 @@ a {
         margin-top: -3px;
         margin-left: 8px; }
 
-.brand-disply-block .brand-name-display ul {
+.brand-disply-block .brand-display ul {
   padding: 0;
-  margin: 2px 0 0 0;
   position: relative; }
 
-.brand-disply-block .brand-name-display ul li {
+.brand-disply-block .brand-display ul li {
   padding: 10px;
   margin: 0;
   list-style: none; }
+  .brand-disply-block .brand-display ul li a {
+    display: none; }
 
-.brand-disply-block .brand-image-display ul {
+.brand-disply-block .brand-display .brand-image-display {
+  padding: 0px 20px; }
+  .brand-disply-block .brand-display .brand-image-display .owl-nav .owl-prev {
+    background: none;
+    color: #9B9B9B;
+    position: absolute;
+    left: -45px;
+    top: 25%; }
+  .brand-disply-block .brand-display .brand-image-display .owl-nav .owl-next {
+    background: none;
+    color: #9B9B9B;
+    position: absolute;
+    right: -45px;
+    top: 25%; }
+
+.brand-name-trigger-list {
   padding: 0;
   margin: 2px 0 0 0;
-  position: relative; }
+  text-align: right;
+  padding-top: 10px;
+  margin-right: 40px; }
+  .brand-name-trigger-list li {
+    letter-spacing: 0.45px;
+    padding: 3px;
+    list-style: none;
+    display: inline;
+    color: #9B9B9B; }
+    .brand-name-trigger-list li a {
+      padding: 0 3px; }
+      .brand-name-trigger-list li a.active {
+        color: #FF5959; }
 
-.brand-disply-block .brand-image-display ul li {
-  padding: 10px;
-  margin: 0;
-  list-style: none; }
+.iconised-title-wrap .iconised-title-image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 155px;
+  height: 160px;
+  background-size: cover; }
 
-.brand-disply-block .brand-image-display .owl-nav .owl-prev {
-  background: none;
+.iconised-title-wrap .iconised-title-text {
+  font-family: "Hind";
+  font-weight: 700;
+  font-size: 48px;
+  color: #555555;
+  letter-spacing: 0.45px;
+  line-height: 44px;
+  margin-top: -30px; }
+  .iconised-title-wrap .iconised-title-text span {
+    font-weight: 300;
+    color: #FF001F; }
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* 07 - Single Page or Post disply page */
+/*---------------------------------------------------------------------------------------------------------------*/
+.truck-post-title-wrap {
+  position: relative;
+  z-index: -2;
+  height: 245px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black; }
+  .truck-post-title-wrap .truck-post-title-bg {
+    opacity: 0.56;
+    background-color: #000000;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+  .truck-post-title-wrap .truck-post-title-line1 {
+    width: 35px;
+    height: 1px;
+    margin-bottom: 5px;
+    background-color: red;
+    margin-left: 5px; }
+  .truck-post-title-wrap .truck-post-title-line2 {
+    width: 35px;
+    height: 1px;
+    margin-bottom: 10px;
+    background-color: #fff; }
+  .truck-post-title-wrap .truck-post-title {
+    letter-spacing: 0.07px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.59); }
+  .truck-post-title-wrap .truck-post-date-and-author .truck-post-title-date {
+    color: #EFEFEF;
+    letter-spacing: 0.72px;
+    padding-right: 5px; }
+  .truck-post-title-wrap .truck-post-date-and-author .truck-post-title-author {
+    color: #EFEFEF;
+    letter-spacing: 0.72px;
+    padding-left: 5px; }
+
+.truck-post-breadcrumb {
+  opacity: 0.79;
+  font-family: "Hind";
+  font-weight: 600;
+  font-size: 10px;
   color: #9B9B9B;
-  position: absolute;
-  left: -25px;
-  top: 35%; }
+  letter-spacing: 0.51px; }
+  .truck-post-breadcrumb a {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s; }
 
-.brand-disply-block .brand-image-display .owl-nav .owl-next {
-  background: none;
-  color: #9B9B9B;
-  position: absolute;
-  right: -25px;
-  top: 35%; }
+.truck-post-content-wrap {
+  /*--- Sidebar Contact Form ---*/ }
+  .truck-post-content-wrap .truck-post-content .kc-container {
+    padding-left: 0px;
+    padding-right: 0px; }
+  .truck-post-content-wrap .truck-post-tags {
+    font-family: "Hind";
+    font-weight: 600;
+    font-size: 12px;
+    color: #9B9B9B;
+    letter-spacing: 0.07px;
+    display: inline-block; }
+    .truck-post-content-wrap .truck-post-tags a {
+      border: 1px solid #979797;
+      border-radius: 63px;
+      padding: 2px 12px 1px 12px;
+      margin-right: 5px;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+  .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 {
+    background-image: linear-gradient(133deg, #DA2B2B 0%, #3E1673 100%);
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+    padding: 30px 15px; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .side-bar-cf7-title {
+      text-align: center;
+      letter-spacing: 0.45px; }
+      .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .side-bar-cf7-title span {
+        font-weight: 300; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .input-name {
+      width: 100%;
+      background: transparent;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid white;
+      color: white;
+      margin-bottom: 20px;
+      font-size: 14px; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .input-email {
+      width: 100%;
+      background: transparent;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid white;
+      margin-bottom: 20px;
+      font-family: "Hind";
+      font-weight: 400;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0.45px; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .input-mobile {
+      width: 100%;
+      background: transparent;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid white;
+      margin-bottom: 20px;
+      font-family: "Hind";
+      font-weight: 400;
+      font-size: 14px;
+      color: #FFFFFF;
+      letter-spacing: 0.45px; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .input-radio {
+      font-size: 13px;
+      letter-spacing: 0.41px;
+      color: #FFFFFF;
+      font-family: "Hind";
+      font-weight: 400; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .input-submit {
+      border: 1px solid #FFFFFF;
+      border-radius: 100px;
+      letter-spacing: 0.38px;
+      background: transparent;
+      padding: 6px 12px 3px 12px;
+      font-family: "Hind";
+      font-size: 12px;
+      font-weight: 700;
+      color: #FFFFFF;
+      cursor: pointer; }
+      .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 .input-submit:hover {
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        color: #FF5959; }
+    .truck-post-content-wrap .truck-post-sidebar .side-bar-cf7 span.wpcf7-not-valid-tip {
+      font-size: 10px;
+      margin-top: -20px;
+      color: #3a99fc; }

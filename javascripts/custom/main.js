@@ -42,4 +42,8 @@ jQuery(document).ready(function($) {
         $('.blog-right-image').height((blogLeftContentH/2)-16);
       }
     });
+
+    //for removing a background opacity on insurance page cf7.
+    $('#remove-class-for-insurance .insurance-quote-wrap .insurance-quote-bg').remove();
+
 });

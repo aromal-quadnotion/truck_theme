@@ -1,4 +1,7 @@
-                                          <div class="clearfix"></div>
+<?php wp_footer();
+  $options = get_option( 'truckindia_wp' );    ?>
+
+                                        <div class="clearfix"></div>
 
 <section class="pre-footer pad-top-min pad-bot-min">
   <div class="container">
@@ -11,12 +14,12 @@
       <div class="col-md-8 pre-footer-content">
         <div class="pre-footer-text">
           <div>
-            <img class="pre-footer-image1" src="<?php echo get_template_directory_uri(); ?>/image/mail.svg" alt="" widget="35px" height="35px">
-            <a class="ease font-size-5 white font-h font-weight-300 pre-footer-text-mar" href="mailto:info@truckingindia.in">info@truckingindia.in</a>
+            <img class="pre-footer-image1" src="<?php echo get_template_directory_uri(); ?>/images/mail.svg" alt="" widget="35px" height="35px">
+            <a class="ease font-size-5 white font-h font-weight-300 pre-footer-text-mar" href="mailto:<?php echo esc_attr($options['ti-mail-url']); ?>"><?php echo esc_html($options['ti-mail-url']); ?></a>
           </div>
           <div class="">
-            <img class="pre-footer-image2" src="<?php echo get_template_directory_uri(); ?>/image/call-icon.svg" alt="" width="25px" height="25px">
-            <a class="ease font-size-5 white font-h font-weight-300 pre-footer-text-mar" href="tel:+914224280070">+91 422 4280070</a>
+            <img class="pre-footer-image2" src="<?php echo get_template_directory_uri(); ?>/images/call-icon.svg" alt="" width="25px" height="25px">
+            <a class="ease font-size-5 white font-h font-weight-300 pre-footer-text-mar" href="tel:<?php echo esc_attr($options['ti-ph-no']); ?>"><?php echo esc_html($options['ti-ph-no']); ?></a>
           </div>
         </div>
       </div>
@@ -86,22 +89,22 @@
   <div class="container">
     <div class="row">
         <div class="col-md-10">
-          <span class="copyright-text font-size-2 gray-b font-size-2 font-weight-400 font-h">© Copyright 2008-2017 Powered By Quadnotion Creative Services LLC. All Rights Reserved.</span>
+          <span class="copyright-text gray-b font-weight-400 font-h"><?php echo esc_html($options['ti-copyright']); ?></span>
         </div>
         <div class="col-md-2">
           <div class="copyright-icon">
             <ul>
               <li>
-                <a class="ease font-size-5" href="#" target="_blank"><i class="ion-social-instagram"></i></a>
+                <a class="ease font-size-5" href="<?php echo esc_attr($options['ti-instagram-url']); ?>" target="_blank"><i class="ion-social-instagram"></i></a>
               </li>
               <li>
-                <a class="ease font-size-5" href="#" target="_blank"><i class="ion-social-facebook"></i></a>
+                <a class="ease font-size-5" href="<?php echo esc_attr($options['ti-facebook-url']); ?>" target="_blank"><i class="ion-social-facebook"></i></a>
               </li>
               <li>
-                <a class="ease font-size-5" href="#" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                <a class="ease font-size-5" href="<?php echo esc_attr($options['ti-vk-url']); ?>" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
               </li>
               <li>
-                <a class="ease font-size-5" href="#" target="_blank"><i class="ion-social-twitter"></i></a>
+                <a class="ease font-size-5" href="<?php echo esc_attr($options['ti-twitter-url']); ?>" target="_blank"><i class="ion-social-twitter"></i></a>
               </li>
             </ul>
           </div>
@@ -112,6 +115,6 @@
 
 
 
-<?php wp_footer(); ?>
+
 </body>
 </html>

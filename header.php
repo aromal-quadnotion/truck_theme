@@ -10,6 +10,7 @@
 
 <?php
     wp_head();
+$options = get_option( 'truckindia_wp' );
 ?>
 </head>
 <body <?php body_class(); ?>>
@@ -21,25 +22,36 @@
         <div class="col-md-6">
           <div class="row justify-content-md-end">
             <div class="col-7 col-md-auto">
-              <span class="font-size-1 gray-b font-h font-weight-700">ASK EXPERT</span> <div class="font-size-1 bray-l display-inline font-h font-weight-500"><a class="ease" href="tel:+919846098460">+919846098460</a>  |  <a class="ease" href="mailto:info@truckingindia.in">info@truckingindia.in</a></div>
+              <span class="font-size-1 gray-b font-h font-weight-700">ASK EXPERT</span> <div class="font-size-1 bray-l display-inline font-h font-weight-500"><a class="ease" href="tel:<?php echo esc_attr($options['ti-ph-no']); ?>"><?php echo esc_html($options['ti-ph-no']); ?></a>  |  <a class="ease" href="mailto:<?php echo esc_attr($options['ti-mail-url']); ?>"><?php echo esc_html($options['ti-mail-url']); ?></a></div>
             </div>
             <div class="col-2 col-md-auto">
               <div class="social-block-icon">
                 <ul>
                   <li>
-                    <a class="ease" href="#" target="_blank"><i class="ion-social-instagram"></i></a>
+                    <a class="ease" href="<?php echo esc_attr($options['ti-instagram-url']); ?>" target="_blank"><i class="ion-social-instagram"></i></a>
                   </li>
                   <li>
-                    <a class="ease" href="#" target="_blank"><i class="ion-social-facebook"></i></a>
+                    <a class="ease" href="<?php echo esc_attr($options['ti-facebook-url']); ?>" target="_blank"><i class="ion-social-facebook"></i></a>
                   </li>
                   <li>
-                    <a class="ease" href="#" target="_blank"><i class="ion-social-twitter"></i></a>
+                    <a class="ease" href="<?php echo esc_attr($options['ti-twitter-url']); ?>" target="_blank"><i class="ion-social-twitter"></i></a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-3 col-md-auto">
-              <span class="font-size-1 gray-l font-h font-weight-500"><a class="ease" href="#">ENG</a> | <a class="ease" href="#">HIN</a> | <a class="ease" href="#">TML</a></span>
+              <div class="social-block-lang">
+                <?php
+                  $nav_args = array(
+                    'theme_location'  => 'pre-header',
+                    'container'       => true,
+                    'menu_class'      => 'font-size-1 gray-l font-h font-weight-500 uppercase',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu'
+                  );
+                  wp_nav_menu( $nav_args );
+                ?>
+              </div>
             </div>
           </div>
         </div>
@@ -52,7 +64,11 @@
       <div class="row mar-top-min mar-bot-min">
         <div class="col-md-2">
           <a href="<?php echo esc_url(home_url( '/' )); ?>">
-            <img src="http://localhost:8888/trucking/wp-content/uploads/2018/01/logo.png" width="125px;">
+            <?php if(isset($options['truckindia-logo']) && $options['truckindia-logo']['url'] != '' ){ ?>
+              <img class="logo" src="<?php echo esc_url($options['truckindia-logo']['url']); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" />
+            <?php } else{
+              echo '<h3 class="black uppercase text-center">'.get_bloginfo('name').'</h3>';
+            } ?>
           </a>
         </div>
         <div class="col-md-7">
@@ -61,7 +77,7 @@
               $nav_args = array(
                 'theme_location'  => 'header',
                 'container'       => true,
-                'menu_class'      => '',
+                'menu_class'      => 'uppercase',
                 'echo'            => true,
                 'fallback_cb'     => 'wp_page_menu'
               );
@@ -76,7 +92,7 @@
               </div>
               <div class="col">
                 <div class="truck-compare-icon">
-                  <img class="compare-icon-img" src="<?php echo get_template_directory_uri(); ?>/image/truck.svg" alt="" width="45px" height="45px">
+                  <img class="compare-icon-img" src="<?php echo get_template_directory_uri(); ?>/images/truck.svg" alt="" width="45px" height="45px">
                 </div>
               </div>
               <div class="col">
