@@ -13,7 +13,11 @@
 $options = get_option( 'truckindia_wp' );
 ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('preloader-running'); ?>>
+
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
 
   <section class="white-2-bg social-block">
     <div class="container">
@@ -44,10 +48,10 @@ $options = get_option( 'truckindia_wp' );
                 <?php
                   $nav_args = array(
                     'theme_location'  => 'pre-header',
-                    'container'       => true,
+                    'container'       => false,
                     'menu_class'      => 'font-size-1 gray-l font-h font-weight-500 uppercase',
                     'echo'            => true,
-                    'fallback_cb'     => 'wp_page_menu'
+                    'fallback_cb'     => ''
                   );
                   wp_nav_menu( $nav_args );
                 ?>
@@ -92,7 +96,7 @@ $options = get_option( 'truckindia_wp' );
               </div>
               <div class="col">
                 <div class="truck-compare-icon">
-                  <img class="compare-icon-img" src="<?php echo get_template_directory_uri(); ?>/images/truck.svg" alt="" width="45px" height="45px">
+                  <img class="compare-icon-img" src="<?php echo get_template_directory_uri(); ?>/images/truck.svg" alt="Compare Icon" width="45px" height="45px">
                 </div>
               </div>
               <div class="col">

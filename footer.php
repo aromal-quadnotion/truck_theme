@@ -30,9 +30,9 @@
                                           <div class="clearfix"></div>
 
 <footer class="footer pad-top-half pad-bot-half">
-  <div class="container">
-    <div class="row">
-      <div class="footer-inline">
+  <div class="">
+    <div class="container">
+      <div class="row">
         <div class="col-md-4">
           <div class="footer-widget-1">
             <?php

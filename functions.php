@@ -8,6 +8,15 @@
       add_action( 'wp_enqueue_scripts', 'truckindia_styles' );
       add_action( 'wp_enqueue_scripts', 'truckindia_scripts' );
     }
+    else
+    {
+      add_action( 'admin_enqueue_scripts', 'truckindia_admin_styles' );
+    }
+
+  function truckindia_admin_styles() {
+
+      wp_enqueue_style("truckindia-adminstyle", get_template_directory_uri(). "/stylesheets/admin.css");
+    }
 
   function truckindia_styles() {
 
@@ -32,6 +41,7 @@
     wp_enqueue_script("smoothdivscroll", get_template_directory_uri(). "/javascripts/libs/jquery.smoothdivscroll-1.3-min.js",array(),false,true);
     wp_enqueue_script("kinetic", get_template_directory_uri(). "/javascripts/libs/jquery.kinetic.min.js",array(),false,true);
     wp_enqueue_script("news-custom", get_template_directory_uri(). "/javascripts/custom/custom-news-scroll.js",array(),false,true);
+    wp_enqueue_script("svg-convert", get_template_directory_uri(). "/javascripts/libs/svg-convert.js",array(),false,true);
     wp_enqueue_script("truckindia-main-script", get_template_directory_uri(). "/javascripts/custom/main.js",array(),false,true);
 
   }
@@ -42,8 +52,8 @@
     register_nav_menu('pre-header', esc_html__( 'Language Navigation', 'truckindia'));
     add_theme_support('post-thumbnails' );
     add_theme_support( "title-tag" );
-    add_theme_support( 'custom-header' );
-    add_theme_support( "custom-background");
+    //add_theme_support( 'custom-header' );
+    //add_theme_support( "custom-background");
     //Feed links
     add_theme_support( 'automatic-feed-links' );
     //Content width
@@ -101,19 +111,40 @@
         'before_title' => '<span class="font-size-2 font-r gray-b font-weight-700 footer-title-padding uppercase">',
         'after_title' => '</span>',
       ) );
+      //Post Page Sidebar
       register_sidebar( array(
-        'name' => 'Post Page Sidebar',
-        'id' => 'post-page-sidebar',
+        'name' => 'Post Sidebar',
+        'id' => 'post-sidebar',
         'description' => 'Appears in the post page right side',
-        'before_widget' => '<aside id="%1$s" class="mar-bot-hhalf widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="sidebar-box widget %2$s">',
+        'after_widget' => '</aside><div class="mar-bot-hhalf"></div>',
+        'before_title' => '<div class="sidebar-title-line"></div><h4 class="sidebar-title font-h font-weight-700 uppercase">',
+        'after_title' => '</h4>',
+      ) );
+      //Truck Listing Sidebar
+      register_sidebar( array(
+        'name' => 'Listing Sidebar',
+        'id' => 'listing-sidebar',
+        'description' => 'Appears in the truck listing page left side',
+        'before_widget' => '<div class="mar-top-hhalf"></div><aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
-        'before_title' => '',
-        'after_title' => '',
+        'before_title' => '<div class="sidebar-title-line"></div><h4 class="sidebar-title font-h font-weight-700 uppercase">',
+        'after_title' => '</h4>',
+      ) );
+      //Truck Single Sidebar
+      register_sidebar( array(
+        'name' => 'Single Sidebar',
+        'id' => 'single-sidebar',
+        'description' => 'Appears in the truck single page right side',
+        'before_widget' => '<div class="mar-top-hhalf"></div><aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<div class="sidebar-title-line"></div><h4 class="sidebar-title font-h font-weight-700 uppercase">',
+        'after_title' => '</h4>',
       ) );
 
   } add_action( 'widgets_init', 'truckindia_widgets_init' );
 
-  //Required Fonts
+  //Required Fonts for theme
   function truckindia_fonts_url() {
 
       wp_enqueue_style( 'truckindia-fonts', 'https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700|Montserrat:300,400,500,700|Open+Sans:300,400,700|Roboto+Condensed:300,400,700', false );
@@ -136,11 +167,12 @@
      $translation_array = array( 'template_directory_uri' => get_template_directory_uri());
      wp_localize_script( 'jquery', 'theme_url_path', $translation_array );
 
-  }add_action('wp_enqueue_scripts','truckindia_theme_url');
+  }
+  add_action('wp_enqueue_scripts','truckindia_theme_url');
 
 
 
-
+//used for post page breadcrumb
   function get_breadcrumb() {
       echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
       if (is_category() || is_single()) {
@@ -159,4 +191,13 @@
           echo the_search_query();
           echo '</em>"';
       }
+  }
+
+  # Template for displaying a single event
+  add_filter( 'single_template', 'truck_single_listing_template');
+  function truck_single_listing_template($single_template) {
+      global $post;
+      if ($post->post_type == 'listings')
+          $single_template = dirname(__FILE__). "/single-listings.php";
+      return $single_template;
   }

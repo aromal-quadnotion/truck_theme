@@ -44,15 +44,53 @@ if ( have_posts() ) :
             <div class="truck-post-content">
               <?php the_content(); ?>
             </div>
-            <div class="truck-post-tags pad-top-half pad-bot-hhalf">
-    	        <?php the_tags(' ', ' ', ''); ?>
-    	      </div>
+            <div class="truck-post-tag-wrap pad-top-hhalf pad-bot-hhalf">
+							<div class="row">
+								<div class="col-md-8">
+									<div class="truck-post-tags">
+										<?php the_tags(' ', ' ', ''); ?>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="truck-post-share">
+										<div class="uppercase font-weight-400 font-h font-size-1" style="transform: translateY(13px); padding-right: 10px;">share</div>
+										<?php echo do_shortcode('[TheChamp-Sharing]') ?>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="truck-post-pagination mar-top-min mar-bot-half">
+							<div class="row justify-content-md-center">
+								<div class="col-md-auto">
+									<div class="truck-post-previous"><?php previous_post_link('%link',esc_html__('Previous Post', 'truckindia')); ?></div>
+								</div>
+								<div class="col-md-auto">
+									<div class="truck-post-next"><?php next_post_link('%link',esc_html__('Next Post', 'truckindia')); ?></div>
+								</div>
+							</div>
+						</div>
+						<div class="truck-post-comments">
+							<div class="truck-post-comment-title">
+								<?php echo get_comments_number(); ?> comments
+								<div class="truck-post-comment-title-line"></div>
+							</div>
+							<?php
+		            if(comments_open() || get_comments_number())
+		            {
+			         ?>
+		              <div class="comments-block white-bg add-bottom-half">
+		                <?php comments_template( ); ?>
+		              </div>
+			         <?php
+		            }
+			        ?>
+						</div>
           </div>
           <div class="col-md-3">
             <div class="truck-post-sidebar">
               <?php
-                  if(is_active_sidebar('post-page-sidebar')){
-                  dynamic_sidebar('post-page-sidebar');
+                  if(is_active_sidebar('post-sidebar')){
+                  dynamic_sidebar('post-sidebar');
                   }
               ?>
             </div>
@@ -60,8 +98,6 @@ if ( have_posts() ) :
         </div>
       </div>
     </section>
-
-
 
 <?php   endwhile;
         endif; //ends the loop
